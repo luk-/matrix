@@ -1,8 +1,8 @@
-module.exports = function (matrix, options) {
-  return new Graph(matrix, options)
+module.exports = function (matrix) {
+  return new Graph(matrix)
 }
 
-var Graph = function (matrix, options) {
+var Graph = function (matrix) {
   this.matrix = label_nodes(matrix)
 }
 
