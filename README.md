@@ -10,5 +10,5 @@ console.log(output.matrix)
 console.log(output.coords)
 ```
 
-Run `./bin` to use the output to create a colorized matrix on your command line.
+Run `./bin` to automatically construct an input matrix array and to use the output to create a colorized matrix on your command line.
 Some colors might be reused automatically.
