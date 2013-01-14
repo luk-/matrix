@@ -1,0 +1,73 @@
+#!/usr/bin/env node
+
+var Graph = require('./main');
+
+
+var random_color = function () {
+  color_arr = [
+  ['\x1B[34m', '\x1B[39m'],
+  ['\x1B[36m', '\x1B[39m'],
+  ['\x1B[32m', '\x1B[39m'],
+  ['\x1B[31m', '\x1B[39m'],
+  ['\x1B[33m', '\x1B[39m']]
+  var n = Math.floor(Math.random() * (4 - 0 + 1))
+  return color_arr[n]
+}
+
+var colorize = function (matrix) {
+  Object.keys(output.coords).forEach(function(val, k) {
+    var color = random_color()
+    output.coords[val].forEach(function (coord) {
+      var col = coord[0]
+      var row = coord[1]
+      if (output.matrix[col][row] === 0) {
+        // gray for 0 rows
+        color = ['\x1B[90m', '\x1B[39m']
+      }
+      output.matrix[col][row] = color[0] + '█' + color[1]
+    })
+  })
+
+  matrix.matrix.forEach(function(val, i) {
+    console.log(val.join(' '))
+  })
+
+}
+
+
+function createMatrix(n, m) {
+  var matrix = [];
+  for (var i = 0; i < n; i++) {
+    matrix[i] = [];
+    for (var j = 0; j < m; j++) {
+      matrix[i].push(Math.round(Math.random()));
+    }
+  }
+  return matrix;
+}
+
+var matrix = createMatrix(10, 10)
+
+var output = new Graph(matrix)
+
+
+/* output:
+
+you can get an array matrix like the input:
+
+output.matrix
+
+or you can get the coordinates in an object and use them in the colorize function:
+
+output.coords
+
+*/
+
+
+
+console.log(matrix)
+console.log('\n\n\n')
+console.log(output.matrix)
+console.log('\n\n\n')
+colorize(output)
+console.log('\n\n\n')

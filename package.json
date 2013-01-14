@@ -1,0 +1,19 @@
+{
+  "name": "matrix",
+  "version": "0.0.1",
+  "description": "matrix in/out",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:st-luke/matrix.git"
+  },
+  "author": {
+    "name": "Luke Arduini",
+    "email": "luke.arduini@me.com",
+    "url": "http://luke.xxx"
+    },
+  "license": "MIT"
+}
